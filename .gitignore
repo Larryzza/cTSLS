@@ -1,0 +1,19 @@
+# R/RStudio specific
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+*.Rproj
+
+# Build files
+.DS_Store
+.Rbuildignore
+*.tar.gz
+
+# Your local data
+sim3/
+UKB/
+UKB data/
+figure/
+*.csv
+*.rds

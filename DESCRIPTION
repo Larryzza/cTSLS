@@ -1,0 +1,22 @@
+Package: cTSLS
+Type: Package
+Title: Instrumental Variable AFT Model
+Version: 0.1.0
+Authors@R: c(
+    person(
+      "Zian Zhuang",
+      email = "zianzhuang@ucla.edu",
+      role = c("aut", "cre")
+    )
+  )
+Description: Package for two-stage IV AFT modeling with synthetic estimation.
+License: MIT
+Encoding: UTF-8
+LazyData: true
+Imports:
+    Rcpp,
+    survival
+LinkingTo:
+    Rcpp,
+    RcppArmadillo
+RoxygenNote: 7.3.2
