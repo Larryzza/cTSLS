@@ -17,3 +17,4 @@ UKB data/
 figure/
 *.csv
 *.rds
+*.Rmd
