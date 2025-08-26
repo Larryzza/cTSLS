@@ -1,18 +1,20 @@
 cTSLS: Two-Stage IV Estimation for AFT with Right-Censored Data
 ================
 
-cTSLS: Two-Stage IV Estimation for AFT Models with Right-Censored Data
+`cTSLS` package implements a censored two-stage least squares (cTSLS)
+estimator for semiparametric accelerated failure time (AFT) models with
+right-censored outcomes. It combines:
 
-ivAFT implements a censored two-stage least squares (cTSLS) estimator
-for semiparametric accelerated failure time (AFT) models with
-right-censored outcomes. It combines: • Leurgans’ synthetic outcome to
-handle censoring • Subject-specific weights for heteroskedastic
-Var(Y_i\*) • A sandwich variance estimator that adjusts for replacing G
-with G
+- Leurgans’ synthetic outcome to handle censoring
+
+- Subject-specific weights for heteroskedastic Var($`Y_i^*`$)
+
+- A sandwich variance estimator that adjusts for replacing G with
+  $`\hat G`$
 
 A nonparametric bootstrap for SEs is also included.
 
-Installation
+# Installation
 
 ``` r
 # from source
@@ -24,7 +26,7 @@ Installation
 # devtools::install_github("user/ivAFT")
 ```
 
-Quick start
+# Quick start
 
 ``` r
 library(ivAFT)
@@ -120,27 +122,5 @@ coef(fit)      # beta coefficients
 #> -0.07728071  0.93440881  0.47061731  0.45950350
 ```
 
-Tip: set Naive = TRUE to see the variance that ignores uncertainty in G.
-
-Model at a glance
-
-We work on a monotone transform Y_i = h(T_i) (default h(t)=t) with right
-censoring: Y_i = {Y_i, C_i},\_i=(Y_iC_i).
-
-Structural equations:
-Leurgans’ synthetic outcome:
-``` math
-
-Y_i^\* \;=\; \tilde Y_i + \int_{-\infty}^{\tilde Y_i} \frac{G(t-)}{1 - G(t-)}\,dt,
-\quad \text{so } \mathbb{E}[Y_i^\*]=\mathbb{E}[Y_i].
-```
-
-The second stage solves a weighted LS estimating equation with
-subject-specific weights $`\omega_i \approx 1/\mathrm{Var}(Y_i^\*)`$,
-updated iteratively. The sandwich variance includes the correction for
-estimating G.
-
-Main functions • iv_aft_fit() — fit the two-stage IV AFT model •
-synthetic_leurgans() — construct $`Y^\*`$ from censoring KM •
-summary.ivAFT, print.ivAFT, vcov.ivAFT, coef.ivAFT — methods •
-bootstrap_iv_aft() — nonparametric bootstrap SEs and CIs
+`Tip`: set Naive = TRUE to see the variance that ignores uncertainty in
+G.
