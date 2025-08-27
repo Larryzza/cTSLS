@@ -29,7 +29,7 @@ A nonparametric bootstrap for SEs is also included.
 # Quick start
 
 ``` r
-library(ivAFT)
+library(cTSLS)
 set.seed(123)
 
 # simulate a toy dataset
